@@ -39,8 +39,8 @@ export default function Items({
       icon: <CalendarIcon className="size-5 stroke-1" />,
     },
     {
-      title: "24/7 Availability",
-      description: "Never miss a call, even during rush hours or after closing",
+      title: "Customizable availability",
+      description: "Configure our agent to take calls during your operating hours.",
       icon: <ClockIcon className="size-5 stroke-1" />,
     },
     {

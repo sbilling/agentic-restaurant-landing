@@ -14,7 +14,7 @@ interface CallAgentProps {
 }
 
 export default function CallAgent({
-  description = "AI-powered phone agents that handle customer calls 24/7. Take orders, book reservations, and answer questions while you focus on great food.",
+  description = "AI-powered phone agents that handle customer calls without putting anyone on hold. Take orders, book reservations, and answer questions while you focus on great food.",
   className,
 }: CallAgentProps) {
   const [restaurantName, setRestaurantName] = useState("");

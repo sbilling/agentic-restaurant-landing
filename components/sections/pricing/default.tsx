@@ -32,7 +32,7 @@ export default function Pricing({
         "AI phone agent for inbound calls",
         "Toast POS integration",
         "Order taking & reservations",
-        "24/7 availability",
+        "Available during your hours",
         "Multi-lingual support",
         "Priority support",
         "Custom voice training",

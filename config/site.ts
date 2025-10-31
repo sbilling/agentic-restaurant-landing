@@ -4,7 +4,7 @@ export const siteConfig = {
   getStartedUrl: "#pricing",
   ogImage: "https://tryhostess.com/og.jpg",
   description:
-    "AI-powered phone agents for restaurants. Handle orders, reservations, and customer inquiries 24/7 with seamless Toast POS integration.",
+    "AI-powered phone agents for restaurants. Handle orders, reservations, and customer inquiries during your hours with seamless Toast POS integration.",
   links: {
     twitter: "https://twitter.com/tryhostess",
     github: "https://github.com/tryhostess",
