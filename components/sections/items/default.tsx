@@ -1,12 +1,12 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  PhoneIcon,
+  CalendarIcon,
+  ShoppingBagIcon,
+  ClockIcon,
+  LineChartIcon,
+  ShieldCheckIcon,
+  UsersIcon,
+  ZapIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -26,50 +26,47 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "Intelligent phone service that understands your restaurant",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
+      title: "Take Orders Instantly",
+      description: "Capture every order accurately with AI that understands your menu",
+      icon: <ShoppingBagIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+      title: "Manage Reservations",
+      description: "Book tables, handle waitlists, and optimize seating automatically",
+      icon: <CalendarIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Light and dark mode",
-      description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+      title: "24/7 Availability",
+      description: "Never miss a call, even during rush hours or after closing",
+      icon: <ClockIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
+      title: "Toast POS Integration",
+      description: "Seamlessly syncs orders directly to your existing POS system",
+      icon: <ZapIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
+      title: "Answer Any Question",
+      description: "AI trained on your menu, hours, policies, and special offers",
+      icon: <PhoneIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
-      icon: <RocketIcon className="size-5 stroke-1" />,
+      title: "Handle Multiple Calls",
+      description: "Scale infinitely during peak hours without adding staff",
+      icon: <UsersIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
+      title: "Real-Time Analytics",
+      description: "Track call volume, orders, and customer insights in one dashboard",
+      icon: <LineChartIcon className="size-5 stroke-1" />,
     },
     {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "Enterprise Security",
+      description: "PCI compliant with encrypted payment processing",
+      icon: <ShieldCheckIcon className="size-5 stroke-1" />,
     },
   ],
   className,
@@ -77,7 +74,7 @@ export default function Items({
   return (
     <Section className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">
-        <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+        <h2 className="max-w-[760px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}
         </h2>
         {items !== false && items.length > 0 && (

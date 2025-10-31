@@ -5,18 +5,16 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border border-border/100 dark:border-border/20 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 gap-2",
+  "inline-flex items-center rounded-full border border-border/100 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 gap-2",
   {
     variants: {
       variant: {
-        default:
-          "border-transparent bg-primary text-primary-foreground dark:shadow-sm dark:border-transparent",
-        brand:
-          "border-transparent bg-brand text-primary-foreground dark:shadow-sm dark:border-transparent",
+        default: "border-transparent bg-primary text-primary-foreground shadow-sm",
+        brand: "border-transparent bg-brand text-primary-foreground shadow-sm",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground dark:shadow-sm dark:border-transparent",
+          "border-transparent bg-secondary text-secondary-foreground shadow-sm",
         destructive:
-          "border-transparent bg-destructive/30 text-destructive-foreground dark:shadow-sm dark:border-transparent",
+          "border-transparent bg-destructive/30 text-destructive-foreground shadow-sm",
         outline: "text-foreground",
       },
       size: {

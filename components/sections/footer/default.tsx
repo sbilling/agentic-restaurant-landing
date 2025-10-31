@@ -3,14 +3,13 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import HostessLogo from "../../logos/hostess";
 import {
   Footer,
   FooterBottom,
   FooterColumn,
   FooterContent,
 } from "../../ui/footer";
-import { ModeToggle } from "../../ui/mode-toggle";
 
 interface FooterLink {
   text: string;
@@ -28,44 +27,56 @@ interface FooterProps {
   columns?: FooterColumnProps[];
   copyright?: string;
   policies?: FooterLink[];
-  showModeToggle?: boolean;
   className?: string;
 }
 
 export default function FooterSection({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+  logo = <HostessLogo />,
+  name = "Hostess",
   columns = [
     {
       title: "Product",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Features", href: "#features" },
+        { text: "Integrations", href: "#integrations" },
+        { text: "Pricing", href: "#pricing" },
+        { text: "API Docs", href: "/docs" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { text: "Quick Service", href: "/solutions/qsr" },
+        { text: "Fine Dining", href: "/solutions/fine-dining" },
+        { text: "Fast Casual", href: "/solutions/fast-casual" },
+        { text: "Multi-Location", href: "/solutions/chains" },
       ],
     },
     {
       title: "Company",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "About Us", href: "/about" },
+        { text: "Careers", href: "/careers" },
+        { text: "Blog", href: "/blog" },
+        { text: "Contact", href: "#contact" },
       ],
     },
     {
-      title: "Contact",
+      title: "Support",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "Help Center", href: "/help" },
+        { text: "Status", href: "https://status.tryhostess.com" },
+        { text: "Email Us", href: siteConfig.links.email },
+        { text: "Call: 1-800-AI-PHONE", href: "tel:18002474663" },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = "© 2025 Hostess. All rights reserved",
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Privacy Policy", href: "/privacy" },
+    { text: "Terms of Service", href: "/terms" },
+    { text: "Security", href: "/security" },
   ],
-  showModeToggle = true,
   className,
 }: FooterProps) {
   return (
@@ -102,7 +113,6 @@ export default function FooterSection({
                   {policy.text}
                 </a>
               ))}
-              {showModeToggle && <ModeToggle />}
             </div>
           </FooterBottom>
         </Footer>

@@ -3,37 +3,41 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-const mockupVariants = cva(
-  "flex relative z-10 overflow-hidden shadow-2xl border border-border/70 dark:border-border/5 dark:border-t-border/15",
+const mockupDevice = cva(
+  "flex relative z-10 overflow-hidden shadow-2xl border border-border/70",
   {
     variants: {
-      type: {
-        mobile: "rounded-[48px] max-w-[350px]",
-        responsive: "rounded-md",
+      variant: {
+        iphone:
+          "rounded-[3rem] bg-foreground/95",
+        macbook:
+          "rounded-xl border-foreground/30",
+        surface:
+          "rounded-2xl",
       },
     },
     defaultVariants: {
-      type: "responsive",
+      variant: "iphone",
     },
-  },
+  }
 );
 
 export interface MockupProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof mockupVariants> {}
+    VariantProps<typeof mockupDevice> {}
 
-function Mockup({ className, type, ...props }: MockupProps) {
+function Mockup({ className, variant, ...props }: MockupProps) {
   return (
     <div
       data-slot="mockup"
-      className={cn(mockupVariants({ type, className }))}
+      className={cn(mockupDevice({ variant, className }))}
       {...props}
     />
   );
 }
 
-const frameVariants = cva(
-  "bg-border/50 flex relative z-10 overflow-hidden rounded-2xl dark:bg-border/10",
+const mockupScreen = cva(
+  "bg-border/50 flex relative z-10 overflow-hidden rounded-2xl",
   {
     variants: {
       size: {
@@ -49,13 +53,13 @@ const frameVariants = cva(
 
 export interface MockupFrameProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof frameVariants> {}
+    VariantProps<typeof mockupScreen> {}
 
 function MockupFrame({ className, size, ...props }: MockupFrameProps) {
   return (
     <div
       data-slot="mockup-frame"
-      className={cn(frameVariants({ size, className }))}
+      className={cn(mockupScreen({ size, className }))}
       {...props}
     />
   );

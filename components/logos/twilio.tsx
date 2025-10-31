@@ -1,0 +1,50 @@
+export default function Twilio() {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        width="40"
+        height="40"
+        rx="8"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="20"
+        cy="20"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <circle
+        cx="17"
+        cy="17"
+        r="2"
+        fill="currentColor"
+      />
+      <circle
+        cx="23"
+        cy="17"
+        r="2"
+        fill="currentColor"
+      />
+      <circle
+        cx="17"
+        cy="23"
+        r="2"
+        fill="currentColor"
+      />
+      <circle
+        cx="23"
+        cy="23"
+        r="2"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

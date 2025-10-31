@@ -23,11 +23,11 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = "Ready to transform your restaurant's phone experience?",
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: "#contact",
+      text: "Start Your Free Trial",
       variant: "default",
     },
   ],

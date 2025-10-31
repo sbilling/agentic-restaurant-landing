@@ -17,26 +17,14 @@ interface StatsProps {
 export default function Stats({
   items = [
     {
-      label: "used by",
-      value: Math.round(siteConfig.stats.figma / 100) / 10,
-      suffix: "k",
-      description: "designers on Figma Community",
+      label: "Uptime",
+      value: siteConfig.stats.uptime,
+      description: "system reliability",
     },
     {
-      label: "over",
-      value: siteConfig.stats.github,
-      description: "clones and forks of the template on Github",
-    },
-    {
-      label: "already",
-      value: Math.round(siteConfig.stats.cli / 100) / 10,
-      suffix: "k",
-      description: "installations with shadcn/ui CLI",
-    },
-    {
-      label: "includes",
-      value: siteConfig.stats.sections,
-      description: "blocks and sections",
+      label: "Accuracy",
+      value: siteConfig.stats.orderAccuracy,
+      description: "order capture rate",
     },
   ],
   className,
@@ -45,7 +33,7 @@ export default function Stats({
     <Section className={className}>
       <div className="container mx-auto max-w-[960px]">
         {items !== false && items.length > 0 && (
-          <div className="grid grid-cols-2 gap-12 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-12 justify-items-center">
             {items.map((item, index) => (
               <div
                 key={index}
@@ -57,7 +45,7 @@ export default function Stats({
                   </div>
                 )}
                 <div className="flex items-baseline gap-2">
-                  <div className="from-foreground to-foreground dark:to-brand bg-linear-to-r bg-clip-text text-4xl font-medium text-transparent drop-shadow-[2px_1px_24px_var(--brand-foreground)] transition-all duration-300 sm:text-5xl md:text-6xl">
+                  <div className="from-foreground to-foreground bg-linear-to-r bg-clip-text text-4xl font-medium text-transparent drop-shadow-[2px_1px_24px_var(--brand-foreground)] transition-all duration-300 sm:text-5xl md:text-6xl">
                     {item.value}
                   </div>
                   {item.suffix && (

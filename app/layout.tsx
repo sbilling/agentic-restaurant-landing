@@ -2,7 +2,6 @@ import "@/app/globals.css";
 
 import type { Metadata } from "next";
 
-import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { inter } from "@/lib/fonts";
 
 import { siteConfig } from "../config/site";
@@ -12,28 +11,31 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  metadataBase: new URL(siteConfig.getStartedUrl),
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
   keywords: [
-    "Landing page template",
-    "Components",
-    "Shadcn",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Radix UI",
+    "Restaurant phone service",
+    "AI phone agent",
+    "Restaurant automation",
+    "Toast POS integration",
+    "Restaurant ordering system",
+    "AI restaurant receptionist",
+    "Automated restaurant calls",
+    "Restaurant reservation system",
+    "Hostess AI",
+    "Restaurant hostess automation",
   ],
   authors: [
     {
-      name: "Mikolaj Dobrucki",
-      url: "https://mikolajdobrucki.com",
+      name: "Hostess Team",
+      url: siteConfig.url,
     },
   ],
-  creator: "mikolajdobrucki",
+  creator: "Hostess",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.getStartedUrl,
+    url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@mikolajdobrucki",
+    creator: "@tryhostess",
   },
   icons: {
     icon: "/favicon.svg",
@@ -65,9 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }} className="dark">
+    <html lang="en" className="">
       <body className={`${inter.className} bg-background antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   );

@@ -12,10 +12,10 @@ const pricingColumnVariants = cva(
   {
     variants: {
       variant: {
-        default: "glass-1 to-transparent dark:glass-3",
-        glow: "glass-2 to-trasparent dark:glass-3 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] dark:after:bg-foreground/30 after:blur-[72px]",
+        default: "glass-1 to-transparent",
+        glow: "glass-2 to-trasparent after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] after:blur-[72px]",
         "glow-brand":
-          "glass-3 from-card/100 to-card/100 dark:glass-4 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] after:bg-brand-foreground/70 after:blur-[72px]",
+          "glass-3 from-card/100 to-card/100 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] after:bg-brand-foreground/70 after:blur-[72px]",
       },
     },
     defaultVariants: {
@@ -30,7 +30,7 @@ export interface PricingColumnProps
   name: string;
   icon?: ReactNode;
   description: string;
-  price: number;
+  price: number | string;
   priceNote: string;
   cta: {
     variant: "glow" | "default";
@@ -77,28 +77,29 @@ export function PricingColumn({
             {description}
           </p>
         </div>
-        <div className="flex items-center gap-3 lg:flex-col lg:items-start xl:flex-row xl:items-center">
-          <div className="flex items-baseline gap-1">
-            <span className="text-muted-foreground text-2xl font-bold">$</span>
-            <span className="text-6xl font-bold">{price}</span>
+        {price !== "" && (
+          <div className="flex items-center gap-3 lg:flex-col lg:items-start xl:flex-row xl:items-center">
+            <div className="flex items-baseline gap-1">
+              {typeof price === "number" && (
+                <span className="text-muted-foreground text-2xl font-bold">$</span>
+              )}
+              <span className="text-6xl font-bold">{price}</span>
+            </div>
+            <div className="flex min-h-[40px] flex-col">
+              {typeof price === "number" && price > 0 && (
+                <>
+                  <span className="text-sm">one-time payment</span>
+                  <span className="text-muted-foreground text-sm">
+                    plus local taxes
+                  </span>
+                </>
+              )}
+            </div>
           </div>
-          <div className="flex min-h-[40px] flex-col">
-            {price > 0 && (
-              <>
-                <span className="text-sm">one-time payment</span>
-                <span className="text-muted-foreground text-sm">
-                  plus local taxes
-                </span>
-              </>
-            )}
-          </div>
-        </div>
+        )}
         <Button variant={cta.variant} size="lg" asChild>
           <Link href={cta.href}>{cta.label}</Link>
         </Button>
-        <p className="text-muted-foreground min-h-[40px] max-w-[220px] text-sm">
-          {priceNote}
-        </p>
         <hr className="border-input" />
       </div>
       <div>

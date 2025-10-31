@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+// import NeverHoldAI from "../../logos/neverhold-ai";
 import { Button, buttonVariants } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
@@ -41,19 +41,19 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <LaunchUI />,
-  name = "Launch UI",
-  homeUrl = siteConfig.url,
+  logo = null,
+  name = "Hostess",
+  homeUrl = "/",
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Features", href: "#features" },
+    { text: "Pricing", href: "#pricing" },
+    { text: "FAQ", href: "#faq" },
+    { text: "Contact", href: "#contact" },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
     {
       text: "Get Started",
-      href: siteConfig.url,
+      href: "mailto:sawyer@fullsend.io",
       isButton: true,
       variant: "default",
     },
@@ -72,10 +72,10 @@ export default function Navbar({
               href={homeUrl}
               className="flex items-center gap-2 text-xl font-bold"
             >
-              {logo}
+              {/* {logo} */}
               {name}
             </a>
-            {showNavigation && (customNavigation || <Navigation />)}
+            {/* {showNavigation && (customNavigation || <Navigation />)} */}
           </NavbarLeft>
           <NavbarRight>
             {actions.map((action, index) =>
